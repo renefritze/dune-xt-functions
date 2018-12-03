@@ -29,14 +29,11 @@ namespace XT {
 namespace Functions {
 
 template <class G, size_t d, size_t r, size_t rC>
-typename std::enable_if<Grid::is_grid<G>::value,
-                        pybind11::class_<IndicatorFunction<typename G::template Codim<0>::Entity,
-                                                           typename G::ctype,
-                                                           d,
-                                                           double,
-                                                           r,
-                                                           rC>>>::type
-bind_IndicatorFunction(pybind11::module& m, const std::string& grid_id)
+typename std::enable_if<
+    Grid::is_grid<G>::value,
+    pybind11::class_<IndicatorFunction<typename G::template Codim<0>::Entity, typename G::ctype, d, double, r, rC>>>::
+    type
+    bind_IndicatorFunction(pybind11::module& m, const std::string& grid_id)
 {
   namespace py = pybind11;
   using namespace pybind11::literals;

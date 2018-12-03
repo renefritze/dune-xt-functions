@@ -53,9 +53,8 @@ public:
 
 template <class DimDomain>
 class FlatTopFunctionTest
-    : public FunctionTest<
-          typename FlatTopFunctionType<YaspGrid<DimDomain::value,
-                                                EquidistantOffsetCoordinates<double, DimDomain::value>>>::value>
+  : public FunctionTest<typename FlatTopFunctionType<
+        YaspGrid<DimDomain::value, EquidistantOffsetCoordinates<double, DimDomain::value>>>::value>
 {
 protected:
   typedef YaspGrid<DimDomain::value, EquidistantOffsetCoordinates<double, DimDomain::value>> GridType;
